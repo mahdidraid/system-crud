@@ -1,6 +1,6 @@
 
 // save loccal storge
-//clear input
+
 //read
 //count
 //deleete
@@ -62,7 +62,23 @@ sub.onclick = function(){
       count:count.value,
       category:category.value
    }
- datapro.push(newpro);
- localStorage.setItem('product',JSON.stringify(datapro))
- console.log(datapro);
+   datapro.push(newpro);
+   localStorage.setItem('product',JSON.stringify(datapro))
+//  console.log(datapro);
+  cleardata();
+}
+
+
+//clear input
+
+function cleardata()
+{
+   tiltle.value = '';
+   price.value = '';
+   taxes.value = '';
+   ads.value = '';
+   discunt.value = '';
+   total.innerHTML='';
+   count.value='';
+   category.value=''; 
 }
