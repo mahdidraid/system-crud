@@ -28,11 +28,11 @@
         </div>
         <div class="outputs">
             <div class="sreachblock">
-                <input type="number" id="sreach" placeholder="sreach">
+                <input onkeyup="searchData(this.value)" type="text" id="sreach" placeholder="sreach">
             </div> 
             <div class="btnsreach">
-                <button id="sreachtitel">Search By Title</button>
-                <button id="sreachcatogory">Search By category</button>
+                <button onclick="getSearchmode(this.id)" id="sreachtitel">Search By Title</button>
+                <button onclick="getSearchmode(this.id )" id="sreachcatogory">Search By category</button>
             </div>
             <div id="delteall">
 
