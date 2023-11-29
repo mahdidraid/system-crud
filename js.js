@@ -62,7 +62,18 @@ sub.onclick = function(){
       count:count.value,
       category:category.value
    }
-   datapro.push(newpro);
+   if(newpro.count > 1)
+   {
+      for(let i = 0; i < newpro.count; i++)
+      {
+            datapro.push(newpro);
+      }
+   }else
+   {
+      datapro.push(newpro);
+
+   }
+
    localStorage.setItem('product',JSON.stringify(datapro))
 //  console.log(datapro);
   cleardata();
@@ -106,6 +117,16 @@ function showDate()
       `
    }
    document.getElementById('tbody').innerHTML = table;
+   let btndelte = document.getElementById("delteall");
+   if(datapro.length >0)
+   {
+      btndelte.innerHTML = `
+     <button onclick="daletall">delet All(${datapro.length})</button>
+      `
+   }else
+   {
+      btndelte.innerHTML  = "";
+   }
 }
 showDate()
 
@@ -113,5 +134,12 @@ function deletedata(i)
 {
    datapro.splice(i,1)
    localStorage.product = JSON.stringify(datapro)
+   showDate()
+}
+
+function daletall()
+{
+   localStorage.clear()
+   datapro.splice(0)
    showDate()
 }

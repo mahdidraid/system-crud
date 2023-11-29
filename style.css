@@ -72,6 +72,9 @@ button:hover{
     width: 45%;
     
 }
+#delteall{
+    margin: 20px 0;
+}
 table{
     width: 100%;
     text-align:center;
